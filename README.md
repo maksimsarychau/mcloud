@@ -5,7 +5,7 @@ Zebrunner MCloud is a Device Farm for automated test execution (Appium) and remo
 
 * It is built on top of [OpenSTF](https://github.com/openstf) and supports iOS devices remote control.
 
-Feel free to support the development with a [**donation**](https://www.paypal.com/donate?hosted_button_id=JLQ4U468TWQPS) for the next improvements.
+Feel free to support the development with a [**donation**](https://www.paypal.com/donate/?hosted_button_id=MNHYYCYHAKUVA) for the next improvements.
 
 <p align="center">
   <a href="https://zebrunner.com/"><img alt="Zebrunner" src="https://github.com/zebrunner/zebrunner/raw/master/docs/img/zebrunner_intro.png"></a>
@@ -17,18 +17,18 @@ Feel free to support the development with a [**donation**](https://www.paypal.co
 
 |                         	| Requirements                                                     	|
 |:-----------------------:	|------------------------------------------------------------------	|
-| <b>Operating System</b> 	| Ubuntu 16.04 - 21.10<br>Linux CentOS 7+<br>Amazon Linux 2 	      |
+| <b>Operating System</b> 	| Ubuntu 24.04<br>Linux CentOS 7+<br>Amazon Linux 2<br>MacOS        |
 | <b>       CPU      </b> 	| 4+ Cores                                                         	|
 | <b>      Memory    </b> 	| 16 Gb RAM                                                        	|
 | <b>    Free space  </b> 	| SSD 32Gb+ of free space                                         	|
 
 ### Software requirements
 
-* Install docker ([Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04), [Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04), [Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04), [Amazon Linux 2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html), [Redhat/Cent OS](https://www.cyberciti.biz/faq/install-use-setup-docker-on-rhel7-centos7-linux/))
-  
-* Install [docker-composer](https://docs.docker.com/compose/install/#install-compose) 1.25.5+
+* Installed Docker v27+
 
-* Install git 2.20.0+
+* Installed Docker compose as a plugin
+
+* Installed git 2.20.0+
 
 ## Usage
 1. Clone [mcloud](https://github.com/zebrunner/mcloud) and set up:
@@ -43,18 +43,17 @@ Feel free to support the development with a [**donation**](https://www.paypal.co
 6. Paste generated token into the variables.env for `STF_TOKEN` var
 7. Restart services using `./zebrunner.sh restart`
 8. Set up the servers with Android and iOS devices according to [mcloud-agent](https://github.com/zebrunner/mcloud-agent)
-   > [mcloud-ios](https://github.com/zebrunner/mcloud-ios) can be used to connect iOS devices via MacOS
+   > [mcloud-ios](https://github.com/zebrunner/mcloud-ios) is deprecated. Use the same [mcloud-agent](https://github.com/zebrunner/mcloud-agent) to setup on MacOS too!
 9. Use `http://hostname:80/mcloud/grid/console` to see connected devices and `http://hostname:80/mcloud/wd/hub` as Selenium/Appium hub url for test automation.
 
 > Follow the installation and configuration guide in [Zebrunner CE](https://zebrunner.github.io/community-edition) to reuse MCloud components effectively for Test Automation.
 
 ## Components
-* [mcloud-agent](https://github.com/zebrunner/mcloud-agent) - Device Farm agent for connecting physical Android and iOS devices including phones, tablets, and TVs via Linux.
-* [mcloud-ios](https://github.com/zebrunner/mcloud-ios) - Device Farm agent for connecting physical iOS devices including phones, tablets, and TVs via Mac.
-  > Support of simulators [coming soon](https://github.com/zebrunner/mcloud-ios/issues/87)
+* [mcloud-agent](https://github.com/zebrunner/mcloud-agent) - Device Farm agent for connecting physical Android and iOS devices including phones, tablets, and TVs via Linux or MacOS.
 * [mcloud-device](https://github.com/zebrunner/mcloud-device) - Dockerized STF provider image for Android and iOS devices.
 * [mcloud-grid](https://github.com/zebrunner/mcloud-grid) - Enhanced Selenium Grid for automating physical devices and emulators/simulators via Appium.
 * [appium](https://github.com/zebrunner/appium) - Enhanced Appium image with low-level video recording and local storage for ipa/apk artifacts.
+* [mcloud-redroid](https://github.com/zebrunner/mcloud-redroid) -  GPU accelerated Android In Cloud solution
 
 ## Documentation and free support
 * [Zebrunner PRO](https://zebrunner.com)
